@@ -19,5 +19,26 @@ describe('Casos de teste sobre a rota /usuarios da API Serverest', () => {
         expect(res.body.message).to.be.eq('Este email já está sendo usado')
       })
     })
-    
+
+    it('Deve buscar o usuário de um arquivo json', () => {
+      cy.fixture('users.json').then(json => {
+        let usuario = {
+          email: json.email,
+          password: json.password
+        }
+        Serverest.logar(usuario).then( res => {
+          ValidaServerest.validaLoginComSucesso(res)
+          Serverest.salvarBearer(res)
+        })
+      })
+    })
+
+    it('Deve buscar e salvar um usuário no arquivo json', () => {
+      Serverest.buscarUsuarios().then( res => {
+        cy.log(JSON.stringify(res.body.usuarios[0]))
+        cy.writeFile('./cypress/fixtures/users.json', res.body.usuarios[0])
+        ValidaServerest.validarBuscaDeUsuarios(res)
+      })
+    })
+
   })

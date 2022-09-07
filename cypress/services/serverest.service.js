@@ -1,5 +1,5 @@
 //import cypress from "cypress"
-
+import Factory from "../fixtures/facture"
 
 
 
@@ -10,11 +10,12 @@ const URL_CARRINHOS = '/carrinhos'
 
 export default class Serverest {
 
-    //Buscar usuários
+    //Buscar todos os usuários
     static buscarUsuarios() {
         return cy.rest('GET', URL_USUARIOS)
     }
 
+    //Buscar um usuário e utilizar as informações dele para o login
     static buscarUsuarioParaLogin() {
         cy.request(URL_USUARIOS).then( res => {
             cy.wrap({
@@ -24,6 +25,7 @@ export default class Serverest {
         })
     }
 
+    //Realizar o login
     static logar(usuario) {
         return cy.rest('POST', URL_LOGIN, usuario)
     }
@@ -41,15 +43,12 @@ export default class Serverest {
     }
 
     static cadastrarProdutoComSucesso() {
+        let produto = Factory.gerarProduto()
+
         return cy.request({
             method: 'POST',
             url: URL_PRODUTOS,
-            body: {
-                "nome": "Logitech MT Lateral",
-                "preco": 300,
-                "descricao": "Teclado",
-                "quantidade": 15
-            },
+            body: produto,
             failOnStatusCode: true,
             auth: {
                 bearer: Cypress.env('bearer'),
