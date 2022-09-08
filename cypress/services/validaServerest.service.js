@@ -38,4 +38,8 @@ export default class ValidaServerest {
         expect(resposta.body).to.haveOwnProperty('_id')
     }
 
+    //VALIDAÇÕES DE CARRINHOS
+
+    
+
 }

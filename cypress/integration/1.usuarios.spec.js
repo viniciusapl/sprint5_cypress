@@ -6,8 +6,9 @@ import ValidaServerest from '../services/validaServerest.service'
 
 
 describe('Casos de teste sobre a rota /usuarios da API Serverest', () => {
-    it('Deve buscar todos os usuários cadastrados', () => {
+    it.only('Deve buscar todos os usuários cadastrados', () => {
       Serverest.buscarUsuarios().then( res => {
+        cy.contractValidation(res, 'get-usuarios', 200)
         ValidaServerest.validarBuscaDeUsuarios(res)
       })
     })
