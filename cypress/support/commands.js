@@ -57,7 +57,7 @@ Cypress.Commands.add('postarUsuarioSemSucesso', (email, password) => {
           "password": "teste",
           "administrador": "true"
         }
-    });
+    })
  })
 
  Cypress.Commands.add('rest', (method = 'GET', url = '/', body, failOnStatusCode = false) => {

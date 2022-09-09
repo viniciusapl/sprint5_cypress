@@ -29,6 +29,24 @@ describe('Casos de teste sobre a rota /produtos da API Serverest', () => {
                 ValidaServerest.validarCadastroDeProdutoComSucesso(res)
             })
         })
+
+        it('Deve realizar a busca do produto cadastrado pelo Id', () => {
+            Serverest.buscarProdutoCadastradoPorId().then( res => {
+                ValidaServerest.validarBuscaDeProdutoCadastradoPorId(res)
+            })
+        })
+
+        it('Deve editar os dados do produto cadastrado com sucesso', () => {
+            Serverest.editarProdutoCadastrado().then( res => {
+                ValidaServerest.validarEdicaoDeProdutoCadastradoComSucesso(res)
+            })
+        })
+
+        it('Deve excluir o produto cadastrado com sucesso', () => {
+            Serverest.deletarProdutoCadastrado().then( res => {
+                ValidaServerest.validarExclusaoDeProduto(res)
+            })
+        })
     })
 
   })
