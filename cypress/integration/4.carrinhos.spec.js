@@ -28,6 +28,7 @@ describe('Casos de teste sobre a rota /carrinhos da API Serverest', () => {
       Serverest.buscarProdutoParaCarrinho() //Aqui eu faço a busca de um produto aleatório dentro da lista de produtos
       cy.get('@produtoParaCarrinho').then( produto => {//O produto retornado na linha acima é chamado aqui no cy.get('@produtoParaCarrinho') e enviado para a próxima função para a adição do carrinho
         Serverest.adicionarCarrinhoComSucesso(produto).then( res => {
+          cy.contractValidation(res, 'post-carrinhos', 201)
           ValidaServerest.validarCadastroDeCarrinho(res)
         })
       })

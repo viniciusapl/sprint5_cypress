@@ -1,15 +1,15 @@
 {
   "stats": {
     "suites": 4,
-    "tests": 15,
-    "passes": 15,
+    "tests": 17,
+    "passes": 12,
     "pending": 0,
-    "failures": 0,
-    "start": "2022-09-09T15:49:29.335Z",
-    "end": "2022-09-09T15:49:53.534Z",
-    "duration": 6040,
-    "testsRegistered": 15,
-    "passPercent": 100,
+    "failures": 5,
+    "start": "2022-09-11T23:08:10.932Z",
+    "end": "2022-09-11T23:08:49.449Z",
+    "duration": 9135,
+    "testsRegistered": 17,
+    "passPercent": 70.58823529411765,
     "pendingPercent": 0,
     "other": 0,
     "hasOther": false,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "2b3d0402-1c0d-4ae7-a386-132ec6faeb1d",
+      "uuid": "0e1b2c89-6c40-444c-8c55-5e63774722f1",
       "title": "",
       "fullFile": "cypress/integration/2.login.spec.js",
       "file": "cypress/integration/2.login.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "8ae328df-8a06-47ce-a7c3-6cc5d5a8e6b3",
+          "uuid": "9319cfaa-ef54-42f1-b426-d50d8f972375",
           "title": "Casos de teste sobre a rota /login da API Serverest",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Deve realizar o login corretamente",
               "fullTitle": "Casos de teste sobre a rota /login da API Serverest Deve realizar o login corretamente",
               "timedOut": null,
-              "duration": 585,
+              "duration": 512,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "_serverest.default.buscarUsuarioParaLogin();\ncy.get('@usuarioLogin').then(usuario => {\n  _serverest.default.logar(usuario).then(res => {\n    cy.contractValidation(res, 'post-login', 200);\n    _validaServerest.default.validaLoginComSucesso(res);\n    _serverest.default.salvarBearer(res);\n  });\n});",
               "err": {},
-              "uuid": "0ad508db-0fd3-4b32-a646-ff11064efe02",
-              "parentUUID": "8ae328df-8a06-47ce-a7c3-6cc5d5a8e6b3",
+              "uuid": "a2c720bc-4579-4576-a975-6ac8436da218",
+              "parentUUID": "9319cfaa-ef54-42f1-b426-d50d8f972375",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Deve realizar tentativa de login sem sucesso",
               "fullTitle": "Casos de teste sobre a rota /login da API Serverest Deve realizar tentativa de login sem sucesso",
               "timedOut": null,
-              "duration": 210,
+              "duration": 193,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "let usuario = {\n  email: 'naoexiste@test.com',\n  password: '123'\n};\n_serverest.default.logar(usuario).then(res => {\n  cy.contractValidation(res, 'post-login', 400);\n  _validaServerest.default.validaLoginSemSucesso(res);\n});",
               "err": {},
-              "uuid": "8b9a20f7-8149-4615-ae5d-9084665b2112",
-              "parentUUID": "8ae328df-8a06-47ce-a7c3-6cc5d5a8e6b3",
+              "uuid": "52bf1b39-7eeb-4da2-a82c-ff2f1298213e",
+              "parentUUID": "9319cfaa-ef54-42f1-b426-d50d8f972375",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "0ad508db-0fd3-4b32-a646-ff11064efe02",
-            "8b9a20f7-8149-4615-ae5d-9084665b2112"
+            "a2c720bc-4579-4576-a975-6ac8436da218",
+            "52bf1b39-7eeb-4da2-a82c-ff2f1298213e"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 795,
+          "duration": 705,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -95,7 +95,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "85363dde-a76c-4df5-a19d-e24ed0044551",
+      "uuid": "467b7d0d-0675-4fba-a658-76346802c147",
       "title": "",
       "fullFile": "cypress/integration/3.produtos.spec.js",
       "file": "cypress/integration/3.produtos.spec.js",
@@ -104,7 +104,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "d2122ff2-e3b6-4108-9455-bdd1d4951c95",
+          "uuid": "cdd19229-8524-4b14-a445-59b0d5f708bb",
           "title": "Casos de teste sobre a rota /produtos da API Serverest",
           "fullFile": "",
           "file": "",
@@ -115,7 +115,7 @@
               "title": "Deve buscar todos os produtos cadastrados",
               "fullTitle": "Casos de teste sobre a rota /produtos da API Serverest Deve buscar todos os produtos cadastrados",
               "timedOut": null,
-              "duration": 260,
+              "duration": 231,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -124,15 +124,15 @@
               "context": null,
               "code": "_serverest.default.buscarProdutos().then(res => {\n  _validaServerest.default.validarBuscaDeProdutos(res);\n});",
               "err": {},
-              "uuid": "b83d165d-2008-402b-8968-f8d7573d70f5",
-              "parentUUID": "d2122ff2-e3b6-4108-9455-bdd1d4951c95",
+              "uuid": "91c7c81b-bbe1-4329-85af-8a7c687a777a",
+              "parentUUID": "cdd19229-8524-4b14-a445-59b0d5f708bb",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [
             {
-              "uuid": "cec5a263-5875-4952-8743-03985c68b2d9",
+              "uuid": "b0d96529-45c3-4b36-bfd6-612506e3139b",
               "title": "Logar com sucesso",
               "fullFile": "",
               "file": "",
@@ -143,17 +143,21 @@
                   "title": "Deve postar um novo produto com sucesso",
                   "fullTitle": "Casos de teste sobre a rota /produtos da API Serverest Logar com sucesso Deve postar um novo produto com sucesso",
                   "timedOut": null,
-                  "duration": 641,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
+                  "duration": 1135,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
                   "code": "_serverest.default.cadastrarProdutoComSucesso().then(res => {\n  _validaServerest.default.validarCadastroDeProdutoComSucesso(res);\n});",
-                  "err": {},
-                  "uuid": "b8401a11-a6fe-49a0-bbd1-859818487154",
-                  "parentUUID": "cec5a263-5875-4952-8743-03985c68b2d9",
+                  "err": {
+                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://serverest.dev/produtos\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://serverest.dev/produtos\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.7.0 Chrome/100.0.4896.75 Electron/18.0.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1hbHZpbmE5OEBob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoiYjh6X0xuM0pldGlDb0NUIiwiaWF0IjoxNjYyOTM3NzEyLCJleHAiOjE2NjI5MzgzMTJ9.sWsvMOIiCuo4ZEYybQlQiFaDX8FAZM24ajMzilUQmNk\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 199\n}\nBody: {\"nome\":\"Elegant Cotton Pants\",\"preco\":8797,\"descricao\":\"The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J\",\"quantidade\":71930}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"access-control-allow-origin\": \"*\",\n  \"x-dns-prefetch-control\": \"off\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"strict-transport-security\": \"max-age=15552000; includeSubDomains\",\n  \"x-download-options\": \"noopen\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"x-moesif-transaction-id\": \"fc0957f2-a536-4993-8b0b-b9840a3dd378\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"x-cloud-trace-context\": \"a09d2a2739c3d7f0b0b5a557f4a9d926\",\n  \"date\": \"Sun, 11 Sep 2022 23:08:32 GMT\",\n  \"server\": \"Google Frontend\",\n  \"content-length\": \"56\"\n}\nBody: {\n  \"message\": \"Rota exclusiva para administradores\"\n}\n\n\nhttps://on.cypress.io/request",
+                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://serverest.dev/produtos\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: POST\nURL: https://serverest.dev/produtos\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.7.0 Chrome/100.0.4896.75 Electron/18.0.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1hbHZpbmE5OEBob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoiYjh6X0xuM0pldGlDb0NUIiwiaWF0IjoxNjYyOTM3NzEyLCJleHAiOjE2NjI5MzgzMTJ9.sWsvMOIiCuo4ZEYybQlQiFaDX8FAZM24ajMzilUQmNk\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 199\n}\nBody: {\"nome\":\"Elegant Cotton Pants\",\"preco\":8797,\"descricao\":\"The Nagasaki Lander is the trademarked name of several series of Nagasaki sport bikes, that started with the 1984 ABC800J\",\"quantidade\":71930}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"access-control-allow-origin\": \"*\",\n  \"x-dns-prefetch-control\": \"off\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"strict-transport-security\": \"max-age=15552000; includeSubDomains\",\n  \"x-download-options\": \"noopen\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"x-moesif-transaction-id\": \"fc0957f2-a536-4993-8b0b-b9840a3dd378\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"x-cloud-trace-context\": \"a09d2a2739c3d7f0b0b5a557f4a9d926\",\n  \"date\": \"Sun, 11 Sep 2022 23:08:32 GMT\",\n  \"server\": \"Google Frontend\",\n  \"content-length\": \"56\"\n}\nBody: {\n  \"message\": \"Rota exclusiva para administradores\"\n}\n\n\nhttps://on.cypress.io/request\n    at https://serverest.dev/__cypress/runner/cypress_runner.js:165434:80\n    at tryCatcher (https://serverest.dev/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (https://serverest.dev/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (https://serverest.dev/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (https://serverest.dev/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (https://serverest.dev/__cypress/runner/cypress_runner.js:11139:18)\n    at _drainQueueStep (https://serverest.dev/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (https://serverest.dev/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://serverest.dev/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (https://serverest.dev/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at Function.validaLoginComSucesso (https://serverest.dev/__cypress/tests?p=cypress\\integration\\3.produtos.spec.js:467:5)\n    at Context.eval (https://serverest.dev/__cypress/tests?p=cypress\\integration\\3.produtos.spec.js:188:36)",
+                    "diff": null
+                  },
+                  "uuid": "a5ce5626-75bd-4591-855c-1859451f9fa4",
+                  "parentUUID": "b0d96529-45c3-4b36-bfd6-612506e3139b",
                   "isHook": false,
                   "skipped": false
                 },
@@ -161,17 +165,21 @@
                   "title": "Deve realizar a busca do produto cadastrado pelo Id",
                   "fullTitle": "Casos de teste sobre a rota /produtos da API Serverest Logar com sucesso Deve realizar a busca do produto cadastrado pelo Id",
                   "timedOut": null,
-                  "duration": 664,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
+                  "duration": 1052,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
                   "code": "_serverest.default.buscarProdutoCadastradoPorId().then(res => {\n  _validaServerest.default.validarBuscaDeProdutoCadastradoPorId(res);\n});",
-                  "err": {},
-                  "uuid": "29992169-6e55-469d-ae46-b3217b92461a",
-                  "parentUUID": "cec5a263-5875-4952-8743-03985c68b2d9",
+                  "err": {
+                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://serverest.dev/produtos/undefined\n\nThe response we received from your web server was:\n\n  > 400: Bad Request\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://serverest.dev/produtos/undefined\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.7.0 Chrome/100.0.4896.75 Electron/18.0.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 400 - Bad Request\nHeaders: {\n  \"access-control-allow-origin\": \"*\",\n  \"x-dns-prefetch-control\": \"off\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"strict-transport-security\": \"max-age=15552000; includeSubDomains\",\n  \"x-download-options\": \"noopen\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"x-moesif-transaction-id\": \"cbf6d78c-0b34-401b-94f4-43df9ecd6841\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"x-cloud-trace-context\": \"4979fbb79af7808273a47cf78bd71c60\",\n  \"date\": \"Sun, 11 Sep 2022 23:08:33 GMT\",\n  \"server\": \"Google Frontend\",\n  \"content-length\": \"44\"\n}\nBody: {\n  \"message\": \"Produto não encontrado\"\n}\n\n\nhttps://on.cypress.io/request",
+                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://serverest.dev/produtos/undefined\n\nThe response we received from your web server was:\n\n  > 400: Bad Request\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: GET\nURL: https://serverest.dev/produtos/undefined\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.7.0 Chrome/100.0.4896.75 Electron/18.0.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"accept-encoding\": \"gzip, deflate\"\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 400 - Bad Request\nHeaders: {\n  \"access-control-allow-origin\": \"*\",\n  \"x-dns-prefetch-control\": \"off\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"strict-transport-security\": \"max-age=15552000; includeSubDomains\",\n  \"x-download-options\": \"noopen\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"x-moesif-transaction-id\": \"cbf6d78c-0b34-401b-94f4-43df9ecd6841\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"x-cloud-trace-context\": \"4979fbb79af7808273a47cf78bd71c60\",\n  \"date\": \"Sun, 11 Sep 2022 23:08:33 GMT\",\n  \"server\": \"Google Frontend\",\n  \"content-length\": \"44\"\n}\nBody: {\n  \"message\": \"Produto não encontrado\"\n}\n\n\nhttps://on.cypress.io/request\n    at https://serverest.dev/__cypress/runner/cypress_runner.js:165434:80\n    at tryCatcher (https://serverest.dev/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (https://serverest.dev/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (https://serverest.dev/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (https://serverest.dev/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (https://serverest.dev/__cypress/runner/cypress_runner.js:11139:18)\n    at _drainQueueStep (https://serverest.dev/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (https://serverest.dev/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://serverest.dev/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (https://serverest.dev/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at Function.validaLoginComSucesso (https://serverest.dev/__cypress/tests?p=cypress\\integration\\3.produtos.spec.js:467:5)\n    at Context.eval (https://serverest.dev/__cypress/tests?p=cypress\\integration\\3.produtos.spec.js:188:36)",
+                    "diff": null
+                  },
+                  "uuid": "a838a6b9-b397-495e-a621-9e81e4a1d5b0",
+                  "parentUUID": "b0d96529-45c3-4b36-bfd6-612506e3139b",
                   "isHook": false,
                   "skipped": false
                 },
@@ -179,17 +187,21 @@
                   "title": "Deve editar os dados do produto cadastrado com sucesso",
                   "fullTitle": "Casos de teste sobre a rota /produtos da API Serverest Logar com sucesso Deve editar os dados do produto cadastrado com sucesso",
                   "timedOut": null,
-                  "duration": 661,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
+                  "duration": 987,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
                   "code": "_serverest.default.editarProdutoCadastrado().then(res => {\n  _validaServerest.default.validarEdicaoDeProdutoCadastradoComSucesso(res);\n});",
-                  "err": {},
-                  "uuid": "d3bc28af-58e0-4e7d-844b-135523859fb9",
-                  "parentUUID": "cec5a263-5875-4952-8743-03985c68b2d9",
+                  "err": {
+                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://serverest.dev/produtos/undefined\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://serverest.dev/produtos/undefined\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.7.0 Chrome/100.0.4896.75 Electron/18.0.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1hbHZpbmE5OEBob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoiYjh6X0xuM0pldGlDb0NUIiwiaWF0IjoxNjYyOTM3NzE0LCJleHAiOjE2NjI5MzgzMTR9.Wam7KzXqD_5XQv7F6NG80FQL30iZ4--TsBWcuGEruZ4\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 186\n}\nBody: {\"nome\":\"Unbranded Fresh Pants\",\"preco\":21422,\"descricao\":\"Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles\",\"quantidade\":49632}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"access-control-allow-origin\": \"*\",\n  \"x-dns-prefetch-control\": \"off\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"strict-transport-security\": \"max-age=15552000; includeSubDomains\",\n  \"x-download-options\": \"noopen\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"x-moesif-transaction-id\": \"1e72333e-40f9-48b0-8051-a1467a9cc6ce\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"x-cloud-trace-context\": \"58cfa26d17122367d9a455acc1b14e33\",\n  \"date\": \"Sun, 11 Sep 2022 23:08:34 GMT\",\n  \"server\": \"Google Frontend\",\n  \"content-length\": \"56\"\n}\nBody: {\n  \"message\": \"Rota exclusiva para administradores\"\n}\n\n\nhttps://on.cypress.io/request",
+                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://serverest.dev/produtos/undefined\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: PUT\nURL: https://serverest.dev/produtos/undefined\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.7.0 Chrome/100.0.4896.75 Electron/18.0.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1hbHZpbmE5OEBob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoiYjh6X0xuM0pldGlDb0NUIiwiaWF0IjoxNjYyOTM3NzE0LCJleHAiOjE2NjI5MzgzMTR9.Wam7KzXqD_5XQv7F6NG80FQL30iZ4--TsBWcuGEruZ4\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-type\": \"application/json\",\n  \"content-length\": 186\n}\nBody: {\"nome\":\"Unbranded Fresh Pants\",\"preco\":21422,\"descricao\":\"Boston's most advanced compression wear technology increases muscle oxygenation, stabilizes active muscles\",\"quantidade\":49632}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"access-control-allow-origin\": \"*\",\n  \"x-dns-prefetch-control\": \"off\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"strict-transport-security\": \"max-age=15552000; includeSubDomains\",\n  \"x-download-options\": \"noopen\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"x-moesif-transaction-id\": \"1e72333e-40f9-48b0-8051-a1467a9cc6ce\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"x-cloud-trace-context\": \"58cfa26d17122367d9a455acc1b14e33\",\n  \"date\": \"Sun, 11 Sep 2022 23:08:34 GMT\",\n  \"server\": \"Google Frontend\",\n  \"content-length\": \"56\"\n}\nBody: {\n  \"message\": \"Rota exclusiva para administradores\"\n}\n\n\nhttps://on.cypress.io/request\n    at https://serverest.dev/__cypress/runner/cypress_runner.js:165434:80\n    at tryCatcher (https://serverest.dev/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (https://serverest.dev/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (https://serverest.dev/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (https://serverest.dev/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (https://serverest.dev/__cypress/runner/cypress_runner.js:11139:18)\n    at _drainQueueStep (https://serverest.dev/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (https://serverest.dev/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://serverest.dev/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (https://serverest.dev/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at Function.validaLoginComSucesso (https://serverest.dev/__cypress/tests?p=cypress\\integration\\3.produtos.spec.js:467:5)\n    at Context.eval (https://serverest.dev/__cypress/tests?p=cypress\\integration\\3.produtos.spec.js:188:36)",
+                    "diff": null
+                  },
+                  "uuid": "0634ae31-21ae-44c9-b42f-bf2389b9fa36",
+                  "parentUUID": "b0d96529-45c3-4b36-bfd6-612506e3139b",
                   "isHook": false,
                   "skipped": false
                 },
@@ -197,44 +209,48 @@
                   "title": "Deve excluir o produto cadastrado com sucesso",
                   "fullTitle": "Casos de teste sobre a rota /produtos da API Serverest Logar com sucesso Deve excluir o produto cadastrado com sucesso",
                   "timedOut": null,
-                  "duration": 671,
-                  "state": "passed",
-                  "speed": "fast",
-                  "pass": true,
-                  "fail": false,
+                  "duration": 876,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
                   "pending": false,
                   "context": null,
                   "code": "_serverest.default.deletarProdutoCadastrado().then(res => {\n  _validaServerest.default.validarExclusaoDeProduto(res);\n});",
-                  "err": {},
-                  "uuid": "f136e9be-d2f4-415a-81e0-49a982369ead",
-                  "parentUUID": "cec5a263-5875-4952-8743-03985c68b2d9",
+                  "err": {
+                    "message": "CypressError: `cy.request()` failed on:\n\nhttps://serverest.dev/produtos/undefined\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://serverest.dev/produtos/undefined\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.7.0 Chrome/100.0.4896.75 Electron/18.0.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1hbHZpbmE5OEBob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoiYjh6X0xuM0pldGlDb0NUIiwiaWF0IjoxNjYyOTM3NzE1LCJleHAiOjE2NjI5MzgzMTV9.Ef-u-uu0Xkhrjw49hlSs5S3KI6tXVBWMa15U-YXyRf0\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"access-control-allow-origin\": \"*\",\n  \"x-dns-prefetch-control\": \"off\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"strict-transport-security\": \"max-age=15552000; includeSubDomains\",\n  \"x-download-options\": \"noopen\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"x-moesif-transaction-id\": \"1e180ead-5112-477b-afd7-c8e101a084d9\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"x-cloud-trace-context\": \"11629a806bd0d29b861efadb01dd73df\",\n  \"date\": \"Sun, 11 Sep 2022 23:08:35 GMT\",\n  \"server\": \"Google Frontend\",\n  \"content-length\": \"56\"\n}\nBody: {\n  \"message\": \"Rota exclusiva para administradores\"\n}\n\n\nhttps://on.cypress.io/request",
+                    "estack": "CypressError: `cy.request()` failed on:\n\nhttps://serverest.dev/produtos/undefined\n\nThe response we received from your web server was:\n\n  > 403: Forbidden\n\nThis was considered a failure because the status code was not `2xx` or `3xx`.\n\nIf you do not want status codes to cause failures pass the option: `failOnStatusCode: false`\n\n-----------------------------------------------------------\n\nThe request we sent was:\n\nMethod: DELETE\nURL: https://serverest.dev/produtos/undefined\nHeaders: {\n  \"Connection\": \"keep-alive\",\n  \"user-agent\": \"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Cypress/9.7.0 Chrome/100.0.4896.75 Electron/18.0.4 Safari/537.36\",\n  \"accept\": \"*/*\",\n  \"authorization\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Ik1hbHZpbmE5OEBob3RtYWlsLmNvbSIsInBhc3N3b3JkIjoiYjh6X0xuM0pldGlDb0NUIiwiaWF0IjoxNjYyOTM3NzE1LCJleHAiOjE2NjI5MzgzMTV9.Ef-u-uu0Xkhrjw49hlSs5S3KI6tXVBWMa15U-YXyRf0\",\n  \"accept-encoding\": \"gzip, deflate\",\n  \"content-length\": 0\n}\n\n-----------------------------------------------------------\n\nThe response we got was:\n\nStatus: 403 - Forbidden\nHeaders: {\n  \"access-control-allow-origin\": \"*\",\n  \"x-dns-prefetch-control\": \"off\",\n  \"x-frame-options\": \"SAMEORIGIN\",\n  \"strict-transport-security\": \"max-age=15552000; includeSubDomains\",\n  \"x-download-options\": \"noopen\",\n  \"x-content-type-options\": \"nosniff\",\n  \"x-xss-protection\": \"1; mode=block\",\n  \"x-moesif-transaction-id\": \"1e180ead-5112-477b-afd7-c8e101a084d9\",\n  \"content-type\": \"application/json; charset=utf-8\",\n  \"x-cloud-trace-context\": \"11629a806bd0d29b861efadb01dd73df\",\n  \"date\": \"Sun, 11 Sep 2022 23:08:35 GMT\",\n  \"server\": \"Google Frontend\",\n  \"content-length\": \"56\"\n}\nBody: {\n  \"message\": \"Rota exclusiva para administradores\"\n}\n\n\nhttps://on.cypress.io/request\n    at https://serverest.dev/__cypress/runner/cypress_runner.js:165434:80\n    at tryCatcher (https://serverest.dev/__cypress/runner/cypress_runner.js:13022:23)\n    at Promise._settlePromiseFromHandler (https://serverest.dev/__cypress/runner/cypress_runner.js:10957:31)\n    at Promise._settlePromise (https://serverest.dev/__cypress/runner/cypress_runner.js:11014:18)\n    at Promise._settlePromise0 (https://serverest.dev/__cypress/runner/cypress_runner.js:11059:10)\n    at Promise._settlePromises (https://serverest.dev/__cypress/runner/cypress_runner.js:11139:18)\n    at _drainQueueStep (https://serverest.dev/__cypress/runner/cypress_runner.js:7729:12)\n    at _drainQueue (https://serverest.dev/__cypress/runner/cypress_runner.js:7722:9)\n    at Async.../../node_modules/bluebird/js/release/async.js.Async._drainQueues (https://serverest.dev/__cypress/runner/cypress_runner.js:7738:5)\n    at Async.drainQueues (https://serverest.dev/__cypress/runner/cypress_runner.js:7608:14)\nFrom Your Spec Code:\n    at Function.validaLoginComSucesso (https://serverest.dev/__cypress/tests?p=cypress\\integration\\3.produtos.spec.js:467:5)\n    at Context.eval (https://serverest.dev/__cypress/tests?p=cypress\\integration\\3.produtos.spec.js:188:36)",
+                    "diff": null
+                  },
+                  "uuid": "ee21d59e-03ee-450f-8740-440c9490509c",
+                  "parentUUID": "b0d96529-45c3-4b36-bfd6-612506e3139b",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
-              "passes": [
-                "b8401a11-a6fe-49a0-bbd1-859818487154",
-                "29992169-6e55-469d-ae46-b3217b92461a",
-                "d3bc28af-58e0-4e7d-844b-135523859fb9",
-                "f136e9be-d2f4-415a-81e0-49a982369ead"
+              "passes": [],
+              "failures": [
+                "a5ce5626-75bd-4591-855c-1859451f9fa4",
+                "a838a6b9-b397-495e-a621-9e81e4a1d5b0",
+                "0634ae31-21ae-44c9-b42f-bf2389b9fa36",
+                "ee21d59e-03ee-450f-8740-440c9490509c"
               ],
-              "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 2637,
+              "duration": 4050,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             }
           ],
           "passes": [
-            "b83d165d-2008-402b-8968-f8d7573d70f5"
+            "91c7c81b-bbe1-4329-85af-8a7c687a777a"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 260,
+          "duration": 231,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -250,7 +266,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "5dc16241-8f08-40ce-a7c4-0c7a976b4388",
+      "uuid": "23faffcd-523f-4615-b0e3-d77cb0dd3c3f",
       "title": "",
       "fullFile": "cypress/integration/4.carrinhos.spec.js",
       "file": "cypress/integration/4.carrinhos.spec.js",
@@ -259,7 +275,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "e14908b0-044e-4e30-9a30-8c388fb07c2d",
+          "uuid": "fba68587-8433-4993-8404-8854dec7d04c",
           "title": "Casos de teste sobre a rota /carrinhos da API Serverest",
           "fullFile": "",
           "file": "",
@@ -270,7 +286,7 @@
               "title": "Deve buscar todos os carrinhos cadastrados",
               "fullTitle": "Casos de teste sobre a rota /carrinhos da API Serverest Deve buscar todos os carrinhos cadastrados",
               "timedOut": null,
-              "duration": 326,
+              "duration": 282,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -279,20 +295,84 @@
               "context": null,
               "code": "_serverest.default.buscarCarrinhos().then(res => {\n  cy.contractValidation(res, 'get-carrinhos', 200);\n  _validaServerest.default.validarBuscaDeCarrinhos(res);\n});",
               "err": {},
-              "uuid": "9d74263a-825c-44ef-a1e9-154f507ca882",
-              "parentUUID": "e14908b0-044e-4e30-9a30-8c388fb07c2d",
+              "uuid": "13f79966-4cd9-483d-b238-a67530823980",
+              "parentUUID": "fba68587-8433-4993-8404-8854dec7d04c",
               "isHook": false,
               "skipped": false
             }
           ],
-          "suites": [],
+          "suites": [
+            {
+              "uuid": "67be6425-2234-4f77-b70f-9bafafaec3df",
+              "title": "Realizar o login com sucesso",
+              "fullFile": "",
+              "file": "",
+              "beforeHooks": [],
+              "afterHooks": [],
+              "tests": [
+                {
+                  "title": "Deve cadastrar um carrinho com sucesso",
+                  "fullTitle": "Casos de teste sobre a rota /carrinhos da API Serverest Realizar o login com sucesso Deve cadastrar um carrinho com sucesso",
+                  "timedOut": null,
+                  "duration": 1238,
+                  "state": "failed",
+                  "speed": null,
+                  "pass": false,
+                  "fail": true,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.buscarProdutoParaCarrinho(); //Aqui eu faço a busca de um produto aleatório dentro da lista de produtos\n\ncy.get('@produtoParaCarrinho').then(produto => {\n  //O produto retornado na linha acima é chamado aqui no cy.get('@produtoParaCarrinho') e enviado para a próxima função para a adição do carrinho\n  _serverest.default.adicionarCarrinhoComSucesso(produto).then(res => {\n    cy.contractValidation(res, 'post-carrinhos', 201);\n    _validaServerest.default.validarCadastroDeCarrinho(res);\n  });\n});",
+                  "err": {
+                    "message": "AssertionError: expected 'Não é permitido ter mais de 1 carrinho' to equal 'Cadastro realizado com sucesso'",
+                    "estack": "AssertionError: expected 'Não é permitido ter mais de 1 carrinho' to equal 'Cadastro realizado com sucesso'\n    at Function.validarCadastroDeCarrinho (https://serverest.dev/__cypress/tests?p=cypress\\integration\\4.carrinhos.spec.js:505:41)\n    at Context.eval (https://serverest.dev/__cypress/tests?p=cypress\\integration\\4.carrinhos.spec.js:206:36)",
+                    "diff": "- 'Não é permitido ter mais de 1 carrinho'\n+ 'Cadastro realizado com sucesso'\n"
+                  },
+                  "uuid": "1f764756-5fb0-48da-8dd2-d97e5791616e",
+                  "parentUUID": "67be6425-2234-4f77-b70f-9bafafaec3df",
+                  "isHook": false,
+                  "skipped": false
+                },
+                {
+                  "title": "Deve realizar a exclusão do carrinho através da finalização da compra com sucesso",
+                  "fullTitle": "Casos de teste sobre a rota /carrinhos da API Serverest Realizar o login com sucesso Deve realizar a exclusão do carrinho através da finalização da compra com sucesso",
+                  "timedOut": null,
+                  "duration": 593,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
+                  "pending": false,
+                  "context": null,
+                  "code": "_serverest.default.concluirCompraComSucesso().then(res => {\n  _validaServerest.default.validarFinalizaçãoDeCompraComSucesso(res);\n});",
+                  "err": {},
+                  "uuid": "94a2e5a8-44a8-4233-8c22-1f41bb1e1258",
+                  "parentUUID": "67be6425-2234-4f77-b70f-9bafafaec3df",
+                  "isHook": false,
+                  "skipped": false
+                }
+              ],
+              "suites": [],
+              "passes": [
+                "94a2e5a8-44a8-4233-8c22-1f41bb1e1258"
+              ],
+              "failures": [
+                "1f764756-5fb0-48da-8dd2-d97e5791616e"
+              ],
+              "pending": [],
+              "skipped": [],
+              "duration": 1831,
+              "root": false,
+              "rootEmpty": false,
+              "_timeout": 2000
+            }
+          ],
           "passes": [
-            "9d74263a-825c-44ef-a1e9-154f507ca882"
+            "13f79966-4cd9-483d-b238-a67530823980"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 326,
+          "duration": 282,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
@@ -308,7 +388,7 @@
       "_timeout": 2000
     },
     {
-      "uuid": "be287a05-ab14-48a6-8f62-400896e7f5a3",
+      "uuid": "876609b6-b50f-4074-bd6a-bd0e751fb6f2",
       "title": "",
       "fullFile": "cypress/integration/1.usuarios.spec.js",
       "file": "cypress/integration/1.usuarios.spec.js",
@@ -317,7 +397,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "69311202-48c2-4ff2-bc05-345e4a93ff97",
+          "uuid": "e04cdf11-9aac-49c4-a406-bc5a9a97cc1e",
           "title": "Casos de teste sobre a rota /usuarios da API Serverest",
           "fullFile": "",
           "file": "",
@@ -328,7 +408,7 @@
               "title": "Deve buscar todos os usuários cadastrados",
               "fullTitle": "Casos de teste sobre a rota /usuarios da API Serverest Deve buscar todos os usuários cadastrados",
               "timedOut": null,
-              "duration": 572,
+              "duration": 637,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -337,8 +417,8 @@
               "context": null,
               "code": "_serverest.default.buscarUsuarios().then(res => {\n  cy.contractValidation(res, 'get-usuarios', 200);\n  _validaServerest.default.validarBuscaDeUsuarios(res);\n});",
               "err": {},
-              "uuid": "8d72ea2e-bc44-49c8-af3f-18aba06cdb06",
-              "parentUUID": "69311202-48c2-4ff2-bc05-345e4a93ff97",
+              "uuid": "776ca0b5-69a3-42ba-b4fe-56eb83a577fa",
+              "parentUUID": "e04cdf11-9aac-49c4-a406-bc5a9a97cc1e",
               "isHook": false,
               "skipped": false
             },
@@ -346,7 +426,7 @@
               "title": "Deve cadastrar um novo usuário administrador",
               "fullTitle": "Casos de teste sobre a rota /usuarios da API Serverest Deve cadastrar um novo usuário administrador",
               "timedOut": null,
-              "duration": 228,
+              "duration": 204,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -355,8 +435,8 @@
               "context": null,
               "code": "_serverest.default.cadastrarNovoUsuario().then(res => {\n  cy.contractValidation(res, 'post-usuarios', 201);\n  _validaServerest.default.validarCadastroDeUsuarioComSucesso(res);\n});",
               "err": {},
-              "uuid": "6e264dda-ab1c-463d-802e-b936aecd2600",
-              "parentUUID": "69311202-48c2-4ff2-bc05-345e4a93ff97",
+              "uuid": "9a814743-e08e-400e-ab2b-993fa9c34d75",
+              "parentUUID": "e04cdf11-9aac-49c4-a406-bc5a9a97cc1e",
               "isHook": false,
               "skipped": false
             },
@@ -364,7 +444,7 @@
               "title": "Deve buscar o usuário cadastrado pelo seu Id",
               "fullTitle": "Casos de teste sobre a rota /usuarios da API Serverest Deve buscar o usuário cadastrado pelo seu Id",
               "timedOut": null,
-              "duration": 253,
+              "duration": 201,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -373,8 +453,8 @@
               "context": null,
               "code": "_serverest.default.buscarUsuarioPorId().then(res => {\n  _validaServerest.default.validarBuscaDeUsuarioPorId(res);\n});",
               "err": {},
-              "uuid": "63f97daa-c202-444f-b840-034ea6c62770",
-              "parentUUID": "69311202-48c2-4ff2-bc05-345e4a93ff97",
+              "uuid": "631d1cc9-8d79-41a3-b646-028a9b3a8a62",
+              "parentUUID": "e04cdf11-9aac-49c4-a406-bc5a9a97cc1e",
               "isHook": false,
               "skipped": false
             },
@@ -382,7 +462,7 @@
               "title": "Deve editar os dados do usuário cadastrado",
               "fullTitle": "Casos de teste sobre a rota /usuarios da API Serverest Deve editar os dados do usuário cadastrado",
               "timedOut": null,
-              "duration": 220,
+              "duration": 205,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -391,8 +471,8 @@
               "context": null,
               "code": "_serverest.default.editarUsuarioCadastrado().then(res => {\n  _validaServerest.default.validarEdicaoDeUsuario(res);\n});",
               "err": {},
-              "uuid": "a5c74a62-2225-4274-b3ac-e03ae1ef8ea9",
-              "parentUUID": "69311202-48c2-4ff2-bc05-345e4a93ff97",
+              "uuid": "584691c1-3aae-474c-86ed-2e963422c058",
+              "parentUUID": "e04cdf11-9aac-49c4-a406-bc5a9a97cc1e",
               "isHook": false,
               "skipped": false
             },
@@ -400,7 +480,7 @@
               "title": "Deve excluir o usuário cadastrado",
               "fullTitle": "Casos de teste sobre a rota /usuarios da API Serverest Deve excluir o usuário cadastrado",
               "timedOut": null,
-              "duration": 207,
+              "duration": 214,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -409,8 +489,8 @@
               "context": null,
               "code": "_serverest.default.excluirUsuarioCadastrado().then(res => {\n  _validaServerest.default.validarExclusaoDeUsuario(res);\n});",
               "err": {},
-              "uuid": "7dce30dc-4b8d-4b97-a377-dbab8992af50",
-              "parentUUID": "69311202-48c2-4ff2-bc05-345e4a93ff97",
+              "uuid": "de0dfd99-2ef0-43ce-8baa-ad908895b7e2",
+              "parentUUID": "e04cdf11-9aac-49c4-a406-bc5a9a97cc1e",
               "isHook": false,
               "skipped": false
             },
@@ -418,7 +498,7 @@
               "title": "Deve buscar o usuário de um arquivo json",
               "fullTitle": "Casos de teste sobre a rota /usuarios da API Serverest Deve buscar o usuário de um arquivo json",
               "timedOut": null,
-              "duration": 249,
+              "duration": 257,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -427,8 +507,8 @@
               "context": null,
               "code": "cy.fixture('users.json').then(json => {\n  let usuario = {\n    email: json.email,\n    password: json.password\n  };\n  _serverest.default.logar(usuario).then(res => {\n    _validaServerest.default.validaLoginComSucesso(res);\n    _serverest.default.salvarBearer(res);\n  });\n});",
               "err": {},
-              "uuid": "bac318ca-e571-4637-a42d-b99afa525ceb",
-              "parentUUID": "69311202-48c2-4ff2-bc05-345e4a93ff97",
+              "uuid": "1614d80a-ea0d-4c77-9a12-87b74a8ba198",
+              "parentUUID": "e04cdf11-9aac-49c4-a406-bc5a9a97cc1e",
               "isHook": false,
               "skipped": false
             },
@@ -436,7 +516,7 @@
               "title": "Deve buscar e salvar um usuário no arquivo json",
               "fullTitle": "Casos de teste sobre a rota /usuarios da API Serverest Deve buscar e salvar um usuário no arquivo json",
               "timedOut": null,
-              "duration": 293,
+              "duration": 318,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -445,26 +525,26 @@
               "context": null,
               "code": "_serverest.default.buscarUsuarios().then(res => {\n  cy.log(JSON.stringify(res.body.usuarios[0]));\n  cy.writeFile('./cypress/fixtures/users.json', res.body.usuarios[0]);\n  _validaServerest.default.validarBuscaDeUsuarios(res);\n});",
               "err": {},
-              "uuid": "1a5a24b3-c758-4cbf-a6ae-2697cff99073",
-              "parentUUID": "69311202-48c2-4ff2-bc05-345e4a93ff97",
+              "uuid": "551a248a-664a-47bf-b8e7-95eb46c08c8e",
+              "parentUUID": "e04cdf11-9aac-49c4-a406-bc5a9a97cc1e",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "8d72ea2e-bc44-49c8-af3f-18aba06cdb06",
-            "6e264dda-ab1c-463d-802e-b936aecd2600",
-            "63f97daa-c202-444f-b840-034ea6c62770",
-            "a5c74a62-2225-4274-b3ac-e03ae1ef8ea9",
-            "7dce30dc-4b8d-4b97-a377-dbab8992af50",
-            "bac318ca-e571-4637-a42d-b99afa525ceb",
-            "1a5a24b3-c758-4cbf-a6ae-2697cff99073"
+            "776ca0b5-69a3-42ba-b4fe-56eb83a577fa",
+            "9a814743-e08e-400e-ab2b-993fa9c34d75",
+            "631d1cc9-8d79-41a3-b646-028a9b3a8a62",
+            "584691c1-3aae-474c-86ed-2e963422c058",
+            "de0dfd99-2ef0-43ce-8baa-ad908895b7e2",
+            "1614d80a-ea0d-4c77-9a12-87b74a8ba198",
+            "551a248a-664a-47bf-b8e7-95eb46c08c8e"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 2022,
+          "duration": 2036,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000

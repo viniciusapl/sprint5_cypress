@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2022-09-09T15:49:38.010Z",
-    "end": "2022-09-09T15:49:38.834Z",
-    "duration": 824,
+    "start": "2022-09-11T23:08:22.631Z",
+    "end": "2022-09-11T23:08:23.359Z",
+    "duration": 728,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "2b3d0402-1c0d-4ae7-a386-132ec6faeb1d",
+      "uuid": "0e1b2c89-6c40-444c-8c55-5e63774722f1",
       "title": "",
       "fullFile": "cypress/integration/2.login.spec.js",
       "file": "cypress/integration/2.login.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "8ae328df-8a06-47ce-a7c3-6cc5d5a8e6b3",
+          "uuid": "9319cfaa-ef54-42f1-b426-d50d8f972375",
           "title": "Casos de teste sobre a rota /login da API Serverest",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Deve realizar o login corretamente",
               "fullTitle": "Casos de teste sobre a rota /login da API Serverest Deve realizar o login corretamente",
               "timedOut": null,
-              "duration": 585,
+              "duration": 512,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "_serverest.default.buscarUsuarioParaLogin();\ncy.get('@usuarioLogin').then(usuario => {\n  _serverest.default.logar(usuario).then(res => {\n    cy.contractValidation(res, 'post-login', 200);\n    _validaServerest.default.validaLoginComSucesso(res);\n    _serverest.default.salvarBearer(res);\n  });\n});",
               "err": {},
-              "uuid": "0ad508db-0fd3-4b32-a646-ff11064efe02",
-              "parentUUID": "8ae328df-8a06-47ce-a7c3-6cc5d5a8e6b3",
+              "uuid": "a2c720bc-4579-4576-a975-6ac8436da218",
+              "parentUUID": "9319cfaa-ef54-42f1-b426-d50d8f972375",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "Deve realizar tentativa de login sem sucesso",
               "fullTitle": "Casos de teste sobre a rota /login da API Serverest Deve realizar tentativa de login sem sucesso",
               "timedOut": null,
-              "duration": 210,
+              "duration": 193,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "let usuario = {\n  email: 'naoexiste@test.com',\n  password: '123'\n};\n_serverest.default.logar(usuario).then(res => {\n  cy.contractValidation(res, 'post-login', 400);\n  _validaServerest.default.validaLoginSemSucesso(res);\n});",
               "err": {},
-              "uuid": "8b9a20f7-8149-4615-ae5d-9084665b2112",
-              "parentUUID": "8ae328df-8a06-47ce-a7c3-6cc5d5a8e6b3",
+              "uuid": "52bf1b39-7eeb-4da2-a82c-ff2f1298213e",
+              "parentUUID": "9319cfaa-ef54-42f1-b426-d50d8f972375",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "0ad508db-0fd3-4b32-a646-ff11064efe02",
-            "8b9a20f7-8149-4615-ae5d-9084665b2112"
+            "a2c720bc-4579-4576-a975-6ac8436da218",
+            "52bf1b39-7eeb-4da2-a82c-ff2f1298213e"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 795,
+          "duration": 705,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
