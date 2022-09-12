@@ -22,12 +22,14 @@ describe('Casos de teste sobre a rota /usuarios da API Serverest', () => {
 
     it('Deve buscar o usuário cadastrado pelo seu Id', () => {
       Serverest.buscarUsuarioPorId().then(res => {
+        cy.contractValidation(res, 'get-usuario-by-id', 200)
         ValidaServerest.validarBuscaDeUsuarioPorId(res)
       })
     })
 
     it('Deve editar os dados do usuário cadastrado', () => {
       Serverest.editarUsuarioCadastrado().then(res => {
+        cy.contractValidation(res, 'put-usuarios-by-id', 200)
         ValidaServerest.validarEdicaoDeUsuario(res)
       })
     })
@@ -35,6 +37,7 @@ describe('Casos de teste sobre a rota /usuarios da API Serverest', () => {
     
     it('Deve excluir o usuário cadastrado', () => {
       Serverest.excluirUsuarioCadastrado().then(res => {
+        cy.contractValidation(res, 'delete-usuarios-by-id', 200)
         ValidaServerest.validarExclusaoDeUsuario(res)
       })
     })

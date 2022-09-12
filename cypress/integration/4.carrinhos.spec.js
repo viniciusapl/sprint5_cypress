@@ -38,6 +38,7 @@ describe('Casos de teste sobre a rota /carrinhos da API Serverest', () => {
     //O carrinho selecionado para exclusão é sempre o carrinho relacionado ao Bearer Token
     it('Deve realizar a exclusão do carrinho através da finalização da compra com sucesso', () => {
       Serverest.concluirCompraComSucesso().then(res => {
+        cy.contractValidation(res, 'delete-carrinhos-concluir-compra', 200)
         ValidaServerest.validarFinalizaçãoDeCompraComSucesso(res)
       })
     })

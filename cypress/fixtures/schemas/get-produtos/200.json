@@ -2,14 +2,14 @@
     "type": "object",
     "required": [
         "quantidade",
-        "usuarios"
+        "produtos"
     ],
     "additionalProperties": true,
     "properties": {
         "quantidade": {
             "type": "integer"
         },
-        "usuarios": {
+        "produtos": {
             "type": "array",
             "additionalItems": true,
             "items": {
