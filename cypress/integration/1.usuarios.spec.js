@@ -41,33 +41,10 @@ describe('Casos de teste sobre a rota /usuarios da API Serverest', () => {
         ValidaServerest.validarExclusaoDeUsuario(res)
       })
     })
-    
-    
-
-    /*it('Não deve postar um novo usuário administrador já cadastrado', () => {
-
-    })*/
-
-
-
-    /*it('Não deve postar um novo usuário administrador já cadastrado', () => {
+    it('Não deve postar um novo usuário administrador já cadastrado', () => {
       cy.postarUsuarioSemSucesso().then( res => {
-        expect(res).to.be.a('object')
-        expect(res.body.message).to.be.a('string')
-        expect(res.body.message).to.be.eq('Este email já está sendo usado')
-      })
-    })*/
-
-    it('Deve buscar o usuário de um arquivo json', () => {
-      cy.fixture('users.json').then(json => {
-        let usuario = {
-          email: json.email,
-          password: json.password
-        }
-        Serverest.logar(usuario).then( res => {
-          ValidaServerest.validaLoginComSucesso(res)
-          Serverest.salvarBearer(res)
-        })
+        cy.contractValidation(res, 'post-usuarios', 400)
+        ValidaServerest.validarCadastroDeUsuarioSemSucesso(res)
       })
     })
 

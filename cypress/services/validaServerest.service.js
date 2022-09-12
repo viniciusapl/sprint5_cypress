@@ -40,6 +40,7 @@ export default class ValidaServerest {
 
     static validaLoginSemSucesso(resposta) {
         expect(resposta.body.message).to.be.eq('Email e/ou senha inválidos')
+        expect(resposta.status).to.equal(400)
     }
 
     //VALIDAÇÕES DE PRODUTOS

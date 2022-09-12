@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 1,
-    "start": "2022-09-11T23:08:47.227Z",
-    "end": "2022-09-11T23:08:49.449Z",
-    "duration": 2222,
+    "start": "2022-09-12T16:33:25.191Z",
+    "end": "2022-09-12T16:33:27.361Z",
+    "duration": 2170,
     "testsRegistered": 3,
     "passPercent": 66.66666666666666,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "23faffcd-523f-4615-b0e3-d77cb0dd3c3f",
+      "uuid": "51674307-11c6-4ebc-8dfc-6409e49ce47e",
       "title": "",
       "fullFile": "cypress/integration/4.carrinhos.spec.js",
       "file": "cypress/integration/4.carrinhos.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "fba68587-8433-4993-8404-8854dec7d04c",
+          "uuid": "6bc8ca01-0f52-4ff5-83cb-a10e020f6292",
           "title": "Casos de teste sobre a rota /carrinhos da API Serverest",
           "fullFile": "",
           "file": "",
@@ -38,24 +38,28 @@
               "title": "Deve buscar todos os carrinhos cadastrados",
               "fullTitle": "Casos de teste sobre a rota /carrinhos da API Serverest Deve buscar todos os carrinhos cadastrados",
               "timedOut": null,
-              "duration": 282,
-              "state": "passed",
-              "speed": "fast",
-              "pass": true,
-              "fail": false,
+              "duration": 555,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
               "pending": false,
               "context": null,
               "code": "_serverest.default.buscarCarrinhos().then(res => {\n  cy.contractValidation(res, 'get-carrinhos', 200);\n  _validaServerest.default.validarBuscaDeCarrinhos(res);\n});",
-              "err": {},
-              "uuid": "13f79966-4cd9-483d-b238-a67530823980",
-              "parentUUID": "fba68587-8433-4993-8404-8854dec7d04c",
+              "err": {
+                "message": "Error: Erros encontrados na validação de contrato, por favor verifique: \n/carrinhos/0/produtos/0/quantidade must be integer, but received string\n/carrinhos/0/quantidadeTotal must be integer, but received string",
+                "estack": "Error: Erros encontrados na validação de contrato, por favor verifique: \n/carrinhos/0/produtos/0/quantidade must be integer, but received string\n/carrinhos/0/quantidadeTotal must be integer, but received string\n    at Context.eval (https://serverest.dev/__cypress/tests?p=cypress\\support\\index.js:166:13)",
+                "diff": null
+              },
+              "uuid": "a16d1a7e-2c8b-4c92-bc9c-adf558d15e21",
+              "parentUUID": "6bc8ca01-0f52-4ff5-83cb-a10e020f6292",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [
             {
-              "uuid": "67be6425-2234-4f77-b70f-9bafafaec3df",
+              "uuid": "b0316b71-923d-44d9-8664-6b1e3e22d97a",
               "title": "Realizar o login com sucesso",
               "fullFile": "",
               "file": "",
@@ -66,21 +70,17 @@
                   "title": "Deve cadastrar um carrinho com sucesso",
                   "fullTitle": "Casos de teste sobre a rota /carrinhos da API Serverest Realizar o login com sucesso Deve cadastrar um carrinho com sucesso",
                   "timedOut": null,
-                  "duration": 1238,
-                  "state": "failed",
-                  "speed": null,
-                  "pass": false,
-                  "fail": true,
+                  "duration": 890,
+                  "state": "passed",
+                  "speed": "fast",
+                  "pass": true,
+                  "fail": false,
                   "pending": false,
                   "context": null,
                   "code": "_serverest.default.buscarProdutoParaCarrinho(); //Aqui eu faço a busca de um produto aleatório dentro da lista de produtos\n\ncy.get('@produtoParaCarrinho').then(produto => {\n  //O produto retornado na linha acima é chamado aqui no cy.get('@produtoParaCarrinho') e enviado para a próxima função para a adição do carrinho\n  _serverest.default.adicionarCarrinhoComSucesso(produto).then(res => {\n    cy.contractValidation(res, 'post-carrinhos', 201);\n    _validaServerest.default.validarCadastroDeCarrinho(res);\n  });\n});",
-                  "err": {
-                    "message": "AssertionError: expected 'Não é permitido ter mais de 1 carrinho' to equal 'Cadastro realizado com sucesso'",
-                    "estack": "AssertionError: expected 'Não é permitido ter mais de 1 carrinho' to equal 'Cadastro realizado com sucesso'\n    at Function.validarCadastroDeCarrinho (https://serverest.dev/__cypress/tests?p=cypress\\integration\\4.carrinhos.spec.js:505:41)\n    at Context.eval (https://serverest.dev/__cypress/tests?p=cypress\\integration\\4.carrinhos.spec.js:206:36)",
-                    "diff": "- 'Não é permitido ter mais de 1 carrinho'\n+ 'Cadastro realizado com sucesso'\n"
-                  },
-                  "uuid": "1f764756-5fb0-48da-8dd2-d97e5791616e",
-                  "parentUUID": "67be6425-2234-4f77-b70f-9bafafaec3df",
+                  "err": {},
+                  "uuid": "6c7dd6d6-6748-436d-a8c3-7eb73c1eae6f",
+                  "parentUUID": "b0316b71-923d-44d9-8664-6b1e3e22d97a",
                   "isHook": false,
                   "skipped": false
                 },
@@ -88,43 +88,42 @@
                   "title": "Deve realizar a exclusão do carrinho através da finalização da compra com sucesso",
                   "fullTitle": "Casos de teste sobre a rota /carrinhos da API Serverest Realizar o login com sucesso Deve realizar a exclusão do carrinho através da finalização da compra com sucesso",
                   "timedOut": null,
-                  "duration": 593,
+                  "duration": 623,
                   "state": "passed",
                   "speed": "fast",
                   "pass": true,
                   "fail": false,
                   "pending": false,
                   "context": null,
-                  "code": "_serverest.default.concluirCompraComSucesso().then(res => {\n  _validaServerest.default.validarFinalizaçãoDeCompraComSucesso(res);\n});",
+                  "code": "_serverest.default.concluirCompraComSucesso().then(res => {\n  cy.contractValidation(res, 'delete-carrinhos-concluir-compra', 200);\n  _validaServerest.default.validarFinalizaçãoDeCompraComSucesso(res);\n});",
                   "err": {},
-                  "uuid": "94a2e5a8-44a8-4233-8c22-1f41bb1e1258",
-                  "parentUUID": "67be6425-2234-4f77-b70f-9bafafaec3df",
+                  "uuid": "e63cd03b-e3f0-41eb-bcfc-91252f413433",
+                  "parentUUID": "b0316b71-923d-44d9-8664-6b1e3e22d97a",
                   "isHook": false,
                   "skipped": false
                 }
               ],
               "suites": [],
               "passes": [
-                "94a2e5a8-44a8-4233-8c22-1f41bb1e1258"
+                "6c7dd6d6-6748-436d-a8c3-7eb73c1eae6f",
+                "e63cd03b-e3f0-41eb-bcfc-91252f413433"
               ],
-              "failures": [
-                "1f764756-5fb0-48da-8dd2-d97e5791616e"
-              ],
+              "failures": [],
               "pending": [],
               "skipped": [],
-              "duration": 1831,
+              "duration": 1513,
               "root": false,
               "rootEmpty": false,
               "_timeout": 2000
             }
           ],
-          "passes": [
-            "13f79966-4cd9-483d-b238-a67530823980"
+          "passes": [],
+          "failures": [
+            "a16d1a7e-2c8b-4c92-bc9c-adf558d15e21"
           ],
-          "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 282,
+          "duration": 555,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
